@@ -9,7 +9,7 @@ import { Container, Typography, TextField, Button, Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 // Add local dependencies.
-import { PageContainer } from "../components/PageContainer";
+import PageContainer from "../components/PageContainer";
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
