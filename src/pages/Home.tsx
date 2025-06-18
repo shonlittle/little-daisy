@@ -66,10 +66,7 @@ const Home = () => {
               <Typography variant="h3" gutterBottom>
                 {currentYear} Recipients
               </Typography>
-              <Typography>
-                Ashley Agepogu, Hailey Cha, Violet Hedgecock, Lucy Valenzuela
-                Richarte, and Zoe Weitz.
-              </Typography>
+              <Typography>To be announced soon!</Typography>
             </CardContent>
           </Card>
         </Grid>
@@ -81,13 +78,16 @@ const Home = () => {
                 {currentYear} Nominees
               </Typography>
               <Typography>
-                Victoria Arreola, Sophia Axarlian, Ani Berjikly, Giuliana
-                Collins, Colette DeNauw, Juliette Freeman, Elaan Gill, Amelia
-                Go, Maia Gutierrez, Leia Lolong Gurvitz, Delilah Mendes,
-                Dayvanie Mercado, Sophia Meza, Angelique Moral, Zoë Morgan,
-                Violet Morrissey, Sana Munjal, Callista Narvaez, Miranda
-                Paniagua, Breanna Paredes, Sophia Peabody, Juliet Price, Ruby
-                Ramos, Katelyn Rumm, Marissa Valencia.
+                Bella Apaez, Yvanna Apaez, Sophia Axarlian, Giuliana Collins,
+                Jaylah Cortez, Azad Ebert, Natalia Edwards, Juliette Freeman,
+                Coral Henry, Jordyn Jiries, Jacob Klesert, Ellen Kwon, Helen
+                Lucero, Abigail Maman, Dayvanie Mercado, Syra Merchant, Sophia
+                Meza, Hannah Miers, Amalia Mkrtchyan, Victoria Morales, Zoë
+                Morgan, Mia Navarro | Rose Neiyer, Madeline Oviedo, Sophia
+                Peabody, Ruby Ramos, Jacob Rosario, Jeilyn Rosario, Katelyn
+                Rumm, Jayla Smythe, Avril Tortola, Kaitlyn Valencia, Elisandra
+                von Doymi, Isabella Walusimbi, Benjamin Wilkerson, and Fiona
+                Yick.
               </Typography>
             </CardContent>
           </Card>
