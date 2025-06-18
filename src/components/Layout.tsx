@@ -15,6 +15,9 @@ import {
 } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 
+import Navigation from "./Navigation";
+import Logo from "./Logo";
+
 interface LayoutProps {
   children: ReactNode;
 }
@@ -28,33 +31,28 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <AppBar position="static" color="primary" elevation={0}>
-        <Toolbar>
-          <Typography
-            variant="h6"
-            component={RouterLink}
-            to="/"
-            sx={{
-              flexGrow: 1,
-              textDecoration: "none",
-              color: "white",
-              fontWeight: 500,
-            }}
-          >
-            Little Daisy Memorial Scholarship
-          </Typography>
-          <Button color="inherit" component={RouterLink} to="/">
-            Home
-          </Button>
-          <Button color="inherit" component={RouterLink} to="/about">
-            About
-          </Button>
-          <Button color="inherit" component={RouterLink} to="/donate">
-            Donate
-          </Button>
-          <Button color="inherit" component={RouterLink} to="/contact">
-            Contact
-          </Button>
-        </Toolbar>
+        <Container maxWidth="lg">
+          <Toolbar sx={{ justifyContent: "space-between", py: 1 }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+              <RouterLink to="/" style={{ textDecoration: "none" }}>
+                <Logo />
+              </RouterLink>
+              <Typography
+                variant="h4"
+                component={RouterLink}
+                to="/"
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  fontWeight: 500,
+                }}
+              >
+                Little Daisy Memorial Scholarship
+              </Typography>
+            </Box>
+            <Navigation />
+          </Toolbar>
+        </Container>
       </AppBar>
 
       <Box component="main" sx={{ flexGrow: 1, py: 4 }}>

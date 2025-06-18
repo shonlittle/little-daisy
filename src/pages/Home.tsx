@@ -15,6 +15,8 @@ import {
 } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 
+import logo from "../assets/images/logo.gif";
+
 interface YearData {
   year: number;
   recipients: string[];
@@ -583,73 +585,92 @@ const Home = () => {
   return (
     <Container maxWidth="lg">
       <Box sx={{ py: 4 }}>
-        <Typography variant="h3" component="h1" gutterBottom align="center">
-          Welcome to the Little Daisy Memorial Scholarship
-        </Typography>
+        <Grid container spacing={4} alignItems="center">
+          <Grid item xs={12} md={4}>
+            <Box
+              component="img"
+              src={logo}
+              alt="Little Daisy Memorial Scholarship Logo"
+              sx={{
+                width: "100%",
+                maxWidth: 200,
+                height: "auto",
+                display: "block",
+                margin: "0 auto",
+              }}
+            />
+          </Grid>
+          <Grid item xs={12} md={8}>
+            <Typography variant="h3" component="h1" gutterBottom align="center">
+              Welcome to the Little Daisy Memorial Scholarship
+            </Typography>
+            <Typography
+              variant="h5"
+              component="h2"
+              gutterBottom
+              align="center"
+              sx={{ mb: 4 }}
+            >
+              Honoring the spirit of Relevé through dance education
+            </Typography>
+            <Typography variant="body1" paragraph>
+              The Little Daisy Memorial Scholarship is an annual award that
+              covers class tuition for a student who truly embodies the heart
+              and spirit of Relevé—demonstrating character, passion, and a love
+              for dance.
+            </Typography>
+            <Typography variant="body1" paragraph>
+              "Relevé" means to rise in French. In ballet, it describes the
+              movement of lifting onto the balls of the feet—a gesture of grace,
+              strength, and aspiration. This scholarship honors the memory of
+              Daisy Christine Little, who was stillborn on May 7, 2012, by
+              helping young dancers rise toward their dreams.
+            </Typography>
+          </Grid>
+        </Grid>
+      </Box>
+
+      <Box sx={{ py: 4 }}>
         <Typography
-          variant="h5"
+          variant="h4"
           component="h2"
           gutterBottom
           align="center"
           sx={{ mb: 4 }}
         >
-          Honoring the spirit of Relevé through dance education
+          Scholarship History
         </Typography>
-        <Typography variant="body1" paragraph>
-          The Little Daisy Memorial Scholarship is an annual award that covers
-          class tuition for a student who truly embodies the heart and spirit of
-          Relevé—demonstrating character, passion, and a love for dance.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          “Relevé” means to rise in French. In ballet, it describes the movement
-          of lifting onto the balls of the feet—a gesture of grace, strength,
-          and aspiration. This scholarship honors the memory of Daisy Christine
-          Little, who was stillborn on May 7, 2012, by helping young dancers
-          rise toward their dreams.
-        </Typography>
-
-        <Box sx={{ py: 4 }}>
-          <Typography
-            variant="h4"
-            component="h2"
-            gutterBottom
-            align="center"
-            sx={{ mb: 4 }}
-          >
-            Scholarship History
-          </Typography>
-          <Grid container spacing={3}>
-            {scholarshipData.map((yearData) => (
-              <Grid item xs={12} md={4} key={yearData.year}>
-                <Card
-                  sx={{
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <CardContent>
-                    <Typography variant="h5" component="h3" gutterBottom>
-                      {yearData.year}
-                    </Typography>
-                    <Typography variant="h6" gutterBottom>
-                      Recipients
-                    </Typography>
-                    <Typography variant="body2" paragraph>
-                      {yearData.recipients.join(", ")}
-                    </Typography>
-                    <Typography variant="h6" gutterBottom>
-                      Nominees
-                    </Typography>
-                    <Typography variant="body2">
-                      {yearData.nominees.join(", ")}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+        <Grid container spacing={3}>
+          {scholarshipData.map((yearData) => (
+            <Grid item xs={12} md={4} key={yearData.year}>
+              <Card
+                sx={{
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <CardContent>
+                  <Typography variant="h5" component="h3" gutterBottom>
+                    {yearData.year}
+                  </Typography>
+                  <Typography variant="h6" gutterBottom>
+                    Recipients
+                  </Typography>
+                  <Typography variant="body2" paragraph>
+                    {yearData.recipients.join(", ")}
+                  </Typography>
+                  <Typography variant="h6" gutterBottom>
+                    Nominees
+                  </Typography>
+                  <Typography variant="body2">
+                    {yearData.nominees.join(", ")}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </Box>
     </Container>
   );
