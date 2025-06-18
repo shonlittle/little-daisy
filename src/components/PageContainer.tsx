@@ -20,7 +20,7 @@ interface PageContainerProps {
  * </PageContainer>
  * @returns {JSX.Element} Container with consistent page layout
  */
-export const PageContainer = ({ children }: PageContainerProps) => {
+const PageContainer = ({ children }: PageContainerProps) => {
   return (
     <Box
       sx={{
@@ -34,3 +34,5 @@ export const PageContainer = ({ children }: PageContainerProps) => {
     </Box>
   );
 };
+
+export default PageContainer;
