@@ -5,14 +5,7 @@
  */
 
 // Add third-party dependencies.
-import {
-  Box,
-  Container,
-  Typography,
-  TextField,
-  Button,
-  Paper,
-} from "@mui/material";
+import { Container, Typography, TextField, Button, Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 // Add local dependencies.

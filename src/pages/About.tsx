@@ -127,8 +127,7 @@ const About = () => {
           <Typography variant="body1" paragraph>
             The scholarship not only provides financial support but also
             recognizes and celebrates the dedication, passion, and character of
-            young dancers who, like Daisy, inspire others through their love of
-            dance.
+            young dancers who inspire others through their love of dance.
           </Typography>
         </Paper>
       </Box>
