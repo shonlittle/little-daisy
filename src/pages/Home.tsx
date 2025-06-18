@@ -23,6 +23,48 @@ interface YearData {
 
 const scholarshipData: YearData[] = [
   {
+    year: 2025,
+    recipients: ["To be announced soon!"],
+    nominees: [
+      "Bella Apaez",
+      "Yvanna Apaez",
+      "Sophia Axarlian",
+      "Giuliana Collins",
+      "Jaylah Cortez",
+      "Azad Ebert",
+      "Natalia Edwards",
+      "Juliette Freeman",
+      "Coral Henry",
+      "Jordyn Jiries",
+      "Jacob Klesert",
+      "Ellen Kwon",
+      "Helen Lucero",
+      "Abigail Maman",
+      "Dayvanie Mercado",
+      "Syra Merchant",
+      "Sophia Meza",
+      "Hannah Miers",
+      "Amalia Mkrtchyan",
+      "Victoria Morales",
+      "Zoë Morgan",
+      "Mia Navarro",
+      "Rose Neiyer",
+      "Madeline Oviedo",
+      "Sophia Peabody",
+      "Ruby Ramos",
+      "Jacob Rosario",
+      "Jeilyn Rosario",
+      "Katelyn Rumm",
+      "Jayla Smythe",
+      "Avril Tortola",
+      "Kaitlyn Valencia",
+      "Elisandra von Doymi",
+      "Isabella Walusimbi",
+      "Benjamin Wilkerson",
+      "Fiona Yick",
+    ],
+  },
+  {
     year: 2024,
     recipients: [
       "Ashley Agepogu",
@@ -554,15 +596,16 @@ const Home = () => {
           Honoring the spirit of Relevé through dance education
         </Typography>
         <Typography variant="body1" paragraph>
-          The Little Daisy Memorial Scholarship is an annual scholarship award
-          underwriting the class tuition of the student who best embodies and
-          showcases the spirit of Relevé.
+          The Little Daisy Memorial Scholarship is an annual award that covers
+          class tuition for a student who truly embodies the heart and spirit of
+          Relevé—demonstrating character, passion, and a love for dance.
         </Typography>
         <Typography variant="body1" paragraph>
-          Relevé means "to rise" in French, and in dance, it refers to the
-          movement of rising onto the balls of the feet. This scholarship honors
-          the memory of Daisy Christine Little, who was stillborn on May 7,
-          2012, by supporting young dancers in their pursuit of excellence.
+          “Relevé” means to rise in French. In ballet, it describes the movement
+          of lifting onto the balls of the feet—a gesture of grace, strength,
+          and aspiration. This scholarship honors the memory of Daisy Christine
+          Little, who was stillborn on May 7, 2012, by helping young dancers
+          rise toward their dreams.
         </Typography>
 
         <Box sx={{ py: 4 }}>
