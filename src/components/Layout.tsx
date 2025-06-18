@@ -12,7 +12,6 @@ import {
   Toolbar,
   Typography,
   Button,
-  Link,
 } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 
@@ -51,6 +50,9 @@ const Layout = ({ children }: LayoutProps) => {
           </Button>
           <Button color="inherit" component={RouterLink} to="/donate">
             Donate
+          </Button>
+          <Button color="inherit" component={RouterLink} to="/contact">
+            Contact
           </Button>
         </Toolbar>
       </AppBar>

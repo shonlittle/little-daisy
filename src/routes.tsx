@@ -12,6 +12,7 @@ import { CircularProgress, Box } from "@mui/material";
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const Donate = lazy(() => import("./pages/Donate"));
+const Contact = lazy(() => import("./pages/Contact"));
 
 /**
  * Loading component for lazy-loaded routes
@@ -41,6 +42,7 @@ const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/donate" element={<Donate />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Suspense>
   );
