@@ -5,14 +5,7 @@
  */
 
 import { ReactNode } from "react";
-import {
-  Box,
-  Container,
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-} from "@mui/material";
+import { Box, Container, AppBar, Toolbar, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 
 import Navigation from "./Navigation";
