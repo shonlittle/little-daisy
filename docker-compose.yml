@@ -18,6 +18,6 @@ services:
     env_file:
       - .env
     ports:
-      - "3080:80"
+      - "3081:80"
     networks:
       - releve2024-network
