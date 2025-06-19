@@ -1,0 +1,23 @@
+# © 2025 Little Shilling, Inc.
+# Shon Little
+# Created: 2025-05-11
+
+# Networks.
+networks:
+  releve2024-network:
+    external: true
+
+# Nginx to serve static files.
+services:
+  little-daisy-nginx:
+    container_name: little-daisy-nginx
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "3080:80"
+    networks:
+      - releve2024-network
