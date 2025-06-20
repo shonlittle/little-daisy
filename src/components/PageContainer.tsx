@@ -1,7 +1,7 @@
 /**
- * © 2024 Little Shilling, Inc.
+ * © 2025 Little Shilling, Inc.
  * Shon Little
- * Created: 2024-03-19
+ * Created: 2025-01-27
  */
 
 // Add third-party dependencies.
@@ -25,8 +25,8 @@ const PageContainer = ({ children }: PageContainerProps) => {
     <Box
       sx={{
         minHeight: "100vh",
-        py: 8,
-        px: 2,
+        py: { xs: 2, sm: 4, md: 8 },
+        px: { xs: 1, sm: 2 },
         backgroundColor: "background.default",
       }}
     >

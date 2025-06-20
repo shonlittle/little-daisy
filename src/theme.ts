@@ -1,11 +1,16 @@
 /**
+ * © 2025 Little Shilling, Inc.
+ * Shon Little
+ * Created: 2025-01-27
+ *
  * Theme configuration for the Little Daisy Memorial Scholarship website
  * @module theme
  */
 
-import { createTheme } from "@mui/material/styles";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
-const theme = createTheme({
+// Create base theme
+const baseTheme = createTheme({
   palette: {
     primary: {
       main: "#9e1f63",
@@ -27,25 +32,46 @@ const theme = createTheme({
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     h1: {
-      fontSize: "2.5rem",
       fontWeight: 500,
       color: "#9e1f63",
     },
     h2: {
-      fontSize: "2rem",
       fontWeight: 500,
       color: "#9e1f63",
     },
     h3: {
-      fontSize: "1.75rem",
+      fontWeight: 500,
+      color: "#9e1f63",
+    },
+    h4: {
+      fontWeight: 500,
+      color: "#9e1f63",
+    },
+    h5: {
+      fontWeight: 500,
+      color: "#9e1f63",
+    },
+    h6: {
       fontWeight: 500,
       color: "#9e1f63",
     },
     body1: {
-      fontSize: "1rem",
+      lineHeight: 1.6,
+    },
+    body2: {
       lineHeight: 1.5,
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+  spacing: 8,
   components: {
     MuiButton: {
       styleOverrides: {
@@ -53,6 +79,11 @@ const theme = createTheme({
           borderRadius: 8,
           textTransform: "none",
           fontWeight: 500,
+          padding: "8px 16px",
+          "@media (max-width: 600px)": {
+            padding: "6px 12px",
+            fontSize: "0.875rem",
+          },
         },
       },
     },
@@ -64,7 +95,32 @@ const theme = createTheme({
         },
       },
     },
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          paddingLeft: 16,
+          paddingRight: 16,
+          "@media (max-width: 600px)": {
+            paddingLeft: 12,
+            paddingRight: 12,
+          },
+        },
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          wordBreak: "break-word",
+        },
+      },
+    },
   },
+});
+
+// Apply responsive font sizes
+const theme = responsiveFontSizes(baseTheme, {
+  breakpoints: ["xs", "sm", "md", "lg", "xl"],
+  factor: 2,
 });
 
 export default theme;

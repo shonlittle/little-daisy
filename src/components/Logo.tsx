@@ -1,7 +1,7 @@
 /**
- * © 2024 Little Shilling, Inc.
+ * © 2025 Little Shilling, Inc.
  * Shon Little
- * Created: 2024-03-19
+ * Created: 2025-01-27
  */
 
 // Add third-party dependencies.
@@ -20,9 +20,10 @@ const Logo = () => {
       src="/images/logo.png"
       alt="Little Daisy Memorial Scholarship Logo"
       sx={{
-        height: 60,
+        height: { xs: 40, sm: 50, md: 60 },
         width: "auto",
         display: "block",
+        maxWidth: "100%",
       }}
     />
   );

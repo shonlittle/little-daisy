@@ -1,11 +1,19 @@
 /**
- * © 2024 Little Shilling, Inc.
+ * © 2025 Little Shilling, Inc.
  * Shon Little
- * Created: 2024-03-19
+ * Created: 2025-01-27
  */
 
 // Add third-party dependencies.
-import { Container, Typography, TextField, Button, Paper } from "@mui/material";
+import {
+  Container,
+  Typography,
+  TextField,
+  Button,
+  Paper,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 // Add local dependencies.
@@ -15,12 +23,19 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
   marginTop: theme.spacing(4),
   backgroundColor: "rgba(255, 255, 255, 0.9)",
+  [theme.breakpoints.down("sm")]: {
+    padding: theme.spacing(2),
+    marginTop: theme.spacing(2),
+  },
 }));
 
 const StyledForm = styled("form")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   gap: theme.spacing(3),
+  [theme.breakpoints.down("sm")]: {
+    gap: theme.spacing(2),
+  },
 }));
 
 /**
@@ -30,24 +45,35 @@ const StyledForm = styled("form")(({ theme }) => ({
  * @returns {JSX.Element} Contact page with form
  */
 const Contact = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <PageContainer>
       <Container maxWidth="md">
         <Typography
-          variant="h2"
+          variant={isMobile ? "h3" : "h2"}
           component="h1"
           gutterBottom
           align="center"
           color="primary"
+          sx={{
+            fontSize: { xs: "1.75rem", sm: "2.125rem", md: "3.75rem" },
+            lineHeight: 1.2,
+          }}
         >
           Contact Us
         </Typography>
         <Typography
-          variant="h5"
+          variant={isMobile ? "h6" : "h5"}
           gutterBottom
           align="center"
           color="text.secondary"
-          sx={{ mb: 4 }}
+          sx={{
+            mb: { xs: 2, sm: 3, md: 4 },
+            fontSize: { xs: "1rem", sm: "1.125rem", md: "1.5rem" },
+            lineHeight: 1.4,
+          }}
         >
           Have questions about the Little Daisy Memorial Scholarship? We'd love
           to hear from you.
@@ -61,6 +87,7 @@ const Contact = () => {
               label="Name"
               name="name"
               variant="outlined"
+              size={isMobile ? "small" : "medium"}
             />
             <TextField
               required
@@ -69,6 +96,7 @@ const Contact = () => {
               name="email"
               type="email"
               variant="outlined"
+              size={isMobile ? "small" : "medium"}
             />
             <TextField
               required
@@ -76,6 +104,7 @@ const Contact = () => {
               label="Subject"
               name="subject"
               variant="outlined"
+              size={isMobile ? "small" : "medium"}
             />
             <TextField
               required
@@ -83,15 +112,19 @@ const Contact = () => {
               label="Message"
               name="message"
               multiline
-              rows={4}
+              rows={isMobile ? 3 : 4}
               variant="outlined"
+              size={isMobile ? "small" : "medium"}
             />
             <Button
               type="submit"
               variant="contained"
               color="primary"
-              size="large"
-              sx={{ mt: 2 }}
+              size={isMobile ? "medium" : "large"}
+              sx={{
+                mt: { xs: 1, sm: 2 },
+                py: { xs: 1, sm: 1.5 },
+              }}
             >
               Send Message
             </Button>
