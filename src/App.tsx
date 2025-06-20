@@ -1,7 +1,7 @@
 /**
- * © 2024 Little Shilling, Inc.
+ * © 2025 Little Shilling, Inc.
  * Shon Little
- * Created: 2024-03-19
+ * Created: 2025-01-27
  */
 
 import { ThemeProvider } from "@mui/material/styles";
@@ -19,7 +19,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
+      <Router future={{ v7_startTransition: true }}>
         <Layout>
           <AppRoutes />
         </Layout>

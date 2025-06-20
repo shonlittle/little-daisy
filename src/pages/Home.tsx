@@ -1,7 +1,7 @@
 /**
- * © 2024 Little Shilling, Inc.
+ * © 2025 Little Shilling, Inc.
  * Shon Little
- * Created: 2024-03-19
+ * Created: 2025-01-27
  */
 
 import {
@@ -11,6 +11,8 @@ import {
   CardContent,
   Grid,
   Container,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
 
 import logo from "../assets/images/logo.gif";
@@ -580,10 +582,13 @@ const scholarshipData: YearData[] = [
  * @returns {JSX.Element} The rendered home page
  */
 const Home = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Container maxWidth="lg">
-      <Box sx={{ py: 4 }}>
-        <Grid container spacing={4} alignItems="center">
+      <Box sx={{ py: { xs: 2, sm: 3, md: 4 } }}>
+        <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} alignItems="center">
           <Grid item xs={12} md={4}>
             <Box
               component="img"
@@ -591,7 +596,7 @@ const Home = () => {
               alt="Little Daisy Memorial Scholarship Logo"
               sx={{
                 width: "100%",
-                maxWidth: 200,
+                maxWidth: { xs: 150, sm: 180, md: 200 },
                 height: "auto",
                 display: "block",
                 margin: "0 auto",
@@ -599,25 +604,51 @@ const Home = () => {
             />
           </Grid>
           <Grid item xs={12} md={8}>
-            <Typography variant="h3" component="h1" gutterBottom align="center">
+            <Typography
+              variant={isMobile ? "h4" : "h3"}
+              component="h1"
+              gutterBottom
+              align="center"
+              sx={{
+                fontSize: { xs: "1.75rem", sm: "2.125rem", md: "3rem" },
+                lineHeight: 1.2,
+              }}
+            >
               Welcome to the Little Daisy Memorial Scholarship
             </Typography>
             <Typography
-              variant="h5"
+              variant={isMobile ? "h6" : "h5"}
               component="h2"
               gutterBottom
               align="center"
-              sx={{ mb: 4 }}
+              sx={{
+                mb: { xs: 2, sm: 3, md: 4 },
+                fontSize: { xs: "1.125rem", sm: "1.25rem", md: "1.5rem" },
+              }}
             >
               Honoring the spirit of Relevé through dance education
             </Typography>
-            <Typography variant="body1" paragraph>
+            <Typography
+              variant="body1"
+              paragraph
+              sx={{
+                fontSize: { xs: "0.875rem", sm: "1rem" },
+                lineHeight: 1.6,
+              }}
+            >
               The Little Daisy Memorial Scholarship is an annual award that
               covers class tuition for a student who truly embodies the heart
               and spirit of Relevé—demonstrating character, passion, and a love
               for dance.
             </Typography>
-            <Typography variant="body1" paragraph>
+            <Typography
+              variant="body1"
+              paragraph
+              sx={{
+                fontSize: { xs: "0.875rem", sm: "1rem" },
+                lineHeight: 1.6,
+              }}
+            >
               "Relevé" means to rise in French. In ballet, it describes the
               movement of lifting onto the balls of the feet—a gesture of grace,
               strength, and aspiration. This scholarship honors the memory of
@@ -628,40 +659,70 @@ const Home = () => {
         </Grid>
       </Box>
 
-      <Box sx={{ py: 4 }}>
+      <Box sx={{ py: { xs: 2, sm: 3, md: 4 } }}>
         <Typography
-          variant="h4"
+          variant={isMobile ? "h5" : "h4"}
           component="h2"
           gutterBottom
           align="center"
-          sx={{ mb: 4 }}
+          sx={{
+            mb: { xs: 2, sm: 3, md: 4 },
+            fontSize: { xs: "1.5rem", sm: "1.75rem", md: "2.125rem" },
+          }}
         >
           Scholarship History
         </Typography>
-        <Grid container spacing={3}>
+        <Grid container spacing={{ xs: 1, sm: 2, md: 3 }}>
           {scholarshipData.map((yearData) => (
-            <Grid item xs={12} md={4} key={yearData.year}>
+            <Grid item xs={12} sm={6} md={4} key={yearData.year}>
               <Card
                 sx={{
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",
+                  minHeight: { xs: "auto", sm: 200 },
                 }}
               >
-                <CardContent>
-                  <Typography variant="h5" component="h3" gutterBottom>
+                <CardContent sx={{ p: { xs: 1.5, sm: 2 } }}>
+                  <Typography
+                    variant={isMobile ? "h6" : "h5"}
+                    component="h3"
+                    gutterBottom
+                    sx={{ fontSize: { xs: "1.125rem", sm: "1.25rem" } }}
+                  >
                     {yearData.year}
                   </Typography>
-                  <Typography variant="h6" gutterBottom>
+                  <Typography
+                    variant={isMobile ? "subtitle1" : "h6"}
+                    gutterBottom
+                    sx={{ fontSize: { xs: "0.875rem", sm: "1rem" } }}
+                  >
                     Recipients
                   </Typography>
-                  <Typography variant="body2" paragraph>
+                  <Typography
+                    variant="body2"
+                    paragraph
+                    sx={{
+                      fontSize: { xs: "0.75rem", sm: "0.875rem" },
+                      lineHeight: 1.4,
+                    }}
+                  >
                     {yearData.recipients.join(", ")}
                   </Typography>
-                  <Typography variant="h6" gutterBottom>
+                  <Typography
+                    variant={isMobile ? "subtitle1" : "h6"}
+                    gutterBottom
+                    sx={{ fontSize: { xs: "0.875rem", sm: "1rem" } }}
+                  >
                     Nominees
                   </Typography>
-                  <Typography variant="body2">
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      fontSize: { xs: "0.75rem", sm: "0.875rem" },
+                      lineHeight: 1.4,
+                    }}
+                  >
                     {yearData.nominees.join(", ")}
                   </Typography>
                 </CardContent>

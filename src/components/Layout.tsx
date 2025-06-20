@@ -1,11 +1,19 @@
 /**
- * © 2024 Little Shilling, Inc.
+ * © 2025 Little Shilling, Inc.
  * Shon Little
- * Created: 2024-03-19
+ * Created: 2025-01-27
  */
 
 import { ReactNode } from "react";
-import { Box, Container, AppBar, Toolbar, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  AppBar,
+  Toolbar,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 
 import Navigation from "./Navigation";
@@ -21,26 +29,47 @@ interface LayoutProps {
  * @returns {JSX.Element} The rendered layout
  */
 const Layout = ({ children }: LayoutProps) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <AppBar position="static" color="primary" elevation={0}>
         <Container maxWidth="lg">
-          <Toolbar sx={{ justifyContent: "space-between", py: 1 }}>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <Toolbar
+            sx={{
+              justifyContent: "space-between",
+              py: isMobile ? 0.5 : 1,
+              flexWrap: "wrap",
+              gap: 1,
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: isMobile ? 1 : 2,
+                flexWrap: "wrap",
+              }}
+            >
               <RouterLink to="/" style={{ textDecoration: "none" }}>
                 <Logo />
               </RouterLink>
               <Typography
-                variant="h4"
+                variant={isMobile ? "h6" : "h4"}
                 component={RouterLink}
                 to="/"
                 sx={{
                   textDecoration: "none",
                   color: "inherit",
                   fontWeight: 500,
+                  textAlign: isMobile ? "center" : "left",
+                  lineHeight: 1.2,
                 }}
               >
-                Little Daisy Memorial Scholarship
+                {isMobile
+                  ? "Little Daisy Memorial Scholarship"
+                  : "Little Daisy Memorial Scholarship"}
               </Typography>
             </Box>
             <Navigation />
@@ -48,21 +77,26 @@ const Layout = ({ children }: LayoutProps) => {
         </Container>
       </AppBar>
 
-      <Box component="main" sx={{ flexGrow: 1, py: 4 }}>
+      <Box component="main" sx={{ flexGrow: 1, py: { xs: 2, sm: 3, md: 4 } }}>
         <Container maxWidth="lg">{children}</Container>
       </Box>
 
       <Box
         component="footer"
         sx={{
-          py: 3,
-          px: 2,
+          py: { xs: 2, sm: 3 },
+          px: { xs: 1, sm: 2 },
           mt: "auto",
           backgroundColor: (theme) => theme.palette.grey[100],
         }}
       >
         <Container maxWidth="lg">
-          <Typography variant="body2" color="text.secondary" align="center">
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            align="center"
+            sx={{ fontSize: { xs: "0.75rem", sm: "0.875rem" } }}
+          >
             © {new Date().getFullYear()} Little Daisy Fund, Inc.
           </Typography>
         </Container>
