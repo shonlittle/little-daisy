@@ -26,7 +26,16 @@ interface YearData {
 const scholarshipData: YearData[] = [
   {
     year: 2025,
-    recipients: ["To be announced soon!"],
+    recipients: [
+      "Elisandra von Doymi",
+      "Jordyn Jiries",
+      "Jacob Klesert",
+      "Syra Merchant",
+      "Zoë Morgan",
+      "Sophia Peabody",
+      "Katelyn Rumm",
+      "Fiona Yick",
+    ],
     nominees: [
       "Bella Apaez",
       "Yvanna Apaez",
