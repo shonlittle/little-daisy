@@ -25,6 +25,38 @@ interface YearData {
 
 const scholarshipData: YearData[] = [
   {
+    year: 2026,
+    recipients: ["TBA"],
+    nominees: [
+      "Abigail Lucero",
+      "Abigail Maman",
+      "Aleena Bido",
+      "Amayah Gibson",
+      "Amelia Johnston",
+      "Andrea Saldivar",
+      "Avery Clayton",
+      "Bella Apaez",
+      "Charlie Webb",
+      "Chloe Casasola",
+      "Giuliana Collins",
+      "Jacob Rosario",
+      "Jeilyn Rosario",
+      "Kinsley Valentine",
+      "Leah Collier",
+      "Leah Perez",
+      "Leah Quirarte",
+      "Maryah Willis",
+      "Molly Icenbice",
+      "Nicole Torres",
+      "Ruby Ramos",
+      "Sophia Axarlian",
+      "Sylvia Donahue",
+      "Tessa Gagne",
+      "Therese Dizon",
+      "Yvanna Apaez",
+    ],
+  },
+  {
     year: 2025,
     recipients: [
       "Elisandra von Doymi",
