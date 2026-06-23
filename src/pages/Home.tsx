@@ -26,7 +26,14 @@ interface YearData {
 const scholarshipData: YearData[] = [
   {
     year: 2026,
-    recipients: ["TBA"],
+    recipients: [
+      "Abigail Lucero",
+      "Giuliana Collins",
+      "Jacob Rosario",
+      "Leah Collier",
+      "Leah Quirarte",
+      "Sylvia Donahue",
+    ],
     nominees: [
       "Abigail Lucero",
       "Abigail Maman",
